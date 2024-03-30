@@ -1,0 +1,3 @@
+pip install pipreqs
+
+in environment just run "pipreqs"
