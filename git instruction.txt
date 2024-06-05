@@ -14,3 +14,7 @@ git remote add origin https://github.com/Priyo-prog/Heart-Disease-Project.git
 git branch -M main
 git push -u origin main
 
+----------------------------------------------------------------------------------------
+To get the status of the file whether in working directory or stating are or local repository
+git diff --staged
+
