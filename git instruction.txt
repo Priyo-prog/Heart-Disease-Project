@@ -114,6 +114,35 @@ To remove an unmerged branch
 git branch -D <branch_name>
 
 
+-------------------------------------------------------------------------------------------------------------
+To checkout to master branch from feature branch without commiting
+
+git stash save "comment"
+
+-------------------------------------------------------------------------------------------------------------
+To see number of stashes in the feature branch
+
+git stash list
+
+
+-------------------------------------------------------------------------------------------------------------
+To apply the stash save of the feature branch
+
+git stash apply <stashid> eample: git stash apply {0}
+
+
+-------------------------------------------------------------------------------------------------------------
+Git stash doesn't delete the saved stash therefore use the below command
+
+git stash pop
+
+-------------------------------------------------------------------------------------------------------------
+To drop aparticular stashid
+
+git stash drop <stashid> example: git stash drop 0
+
+
+
 
 
 
