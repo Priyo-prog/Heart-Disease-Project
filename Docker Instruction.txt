@@ -1,0 +1,110 @@
+Check number of containers running
+
+docker ps -a
+
+-----------------------------------------------------------------------------------------
+To delete docker system
+
+docker system prune -a
+
+
+-----------------------------------------------------------------------------------------
+Build Docker
+
+docker build -t <image_name> <space> .
+
+
+-----------------------------------------------------------------------------------------
+Run the docker container
+
+docker run --rm --name <name_of_the_container> <name_of_the_image>
+
+
+-----------------------------------------------------------------------------------------
+Docker interactive mode
+
+docker --rm -it --name <container_name> <image_name> /bin/sh    --- THIS WORKS
+
+Docker interactive mode in windows powershell
+first build the image all in lower case
+
+docker build -t simpleweb .
+
+docker run -it --entrypoint /bin/sh -v "${PWD}:/app" simpleweb <-- image_name
+
+To get out of the interative mode 
+
+exit
+-----------------------------------------------------------------------------------------
+Pass environment variable in docker container
+
+docker run --rm -e <variable_name>=<value> --name <container_name> <image_name>
+
+-----------------------------------------------------------------------------------------
+The docker container is isolated from host machine. To do the port mapping of dcoker 
+container with host machine we need.
+
+docker run -p <host_port_number>:<docker_port_number> --rm --name <container_name> <image_name>
+example : docker run -p 8080:5000 --rm --name flask-demo-container flask-demo
+
+
+-----------------------------------------------------------------------------------------
+Create a docker network so that 2 docker container can interact ane exchange information
+
+docker network create my-network
+
+-----------------------------------------------------------------------------------------
+If authentication is issue in pulling from base image use login
+
+docker login : Provide the emailid and password
+
+
+-----------------------------------------------------------------------------------------
+To execute docker-compose.yaml file
+
+docker-compose up --build
+
+-----------------------------------------------------------------------------------------
+To view the logs of the running containers, open a new terminal and run:
+
+docker-compose logs python-app
+
+
+-----------------------------------------------------------------------------------------
+
+If we want to build Dockerfile.python dockerfile then we cannot use docker build -t <tag_name> <space> .
+
+We will use the below command:
+
+docker build -t <tag_name> -f Dockerfile.python
+
+
+-----------------------------------------------------------------------------------------
+If we have done docker-compose with multiple containers. Then to access a particular 
+container on a secomnd window
+
+docker ps -a
+
+docker exec it <container_id> sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
